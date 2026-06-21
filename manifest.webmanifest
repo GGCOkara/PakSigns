@@ -1,0 +1,130 @@
+{
+  "name": "PakSigns - Pakistan Traffic Signs",
+  "short_name": "PakSigns",
+  "description": "Prepare for the official Pakistani computerized driving license e-sign test offline.",
+  "start_url": "./PakSigns",
+  "scope": "./PakSigns",
+  "id": "./PakSigns",
+  "background_color": "#1a1c18",
+  "theme_color": "#006837",
+  "orientation": "any",
+  "display": "standalone",
+  "lang": "en",
+
+  "categories": ["technology", "Software", "traffic", "signs", "pakistan"],
+
+  "prefer_related_applications": false,
+
+  "icons": [
+    {
+      "src": "./favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "./src/16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./src/144-maskable.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./src/192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./src/192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./src/512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./src/512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Main Site",
+      "short_name": "Main Site",
+      "description": "Click To Open Main Site",
+      "url": "./main/",
+      "icons": [
+        {
+          "src": "./src/144.png",
+          "sizes": "144x144",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "./src/social-1.png",
+      "form_factor": "wide",
+      "sizes": "1440x810",
+      "type": "image/png",
+      "description": "Screenshot  main Tab"
+    },
+    {
+      "src": "./src/social-2.png",
+      "form_factor": "wide",
+      "sizes": "1440x810",
+      "type": "image/png",
+      "description": "Screenshot  main Tab"
+    },
+    {
+      "src": "./src/social-3.png",
+      "form_factor": "wide",
+      "sizes": "1440x810",
+      "type": "image/png",
+      "description": "Screenshot  main Tab"
+    },
+
+    {
+      "src": "./src/social_1.png",
+      "sizes": "720x1480",
+      "type": "image/png",
+      "description": "Screenshot Of main tab"
+    },
+    {
+      "src": "./src/social_2.png",
+      "sizes": "720x1480",
+      "type": "image/png",
+      "description": "Screenshot Of main tab"
+    },
+    {
+      "src": "./src/social_3.png",
+      "sizes": "720x1480",
+      "type": "image/png",
+      "description": "Screenshot Of main tab"
+    }
+  ]
+}

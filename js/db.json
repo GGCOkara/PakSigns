@@ -1,0 +1,1129 @@
+{
+  "signs": [
+    {
+      "id": 1,
+      "category": "mandatory",
+      "img": "1.png",
+      "ur": "ٹریکٹر کا داخلہ ممنوع ہے",
+      "en": "Tractors are not allowed to enter"
+    },
+    {
+      "id": 2,
+      "category": "warning",
+      "img": "2.png",
+      "ur": "دہری سڑک ختم ہے",
+      "en": "The dual road ends"
+    },
+    {
+      "id": 3,
+      "category": "mandatory",
+      "img": "3.png",
+      "ur": "آپ 30 کلو میٹر فی گھنٹہ کی حد رفتار کے علاقہ میں داخل ہو رہے ہیں",
+      "en": "You are entering an area where the speed limit is 30 kilometers per hour"
+    },
+    {
+      "id": 4,
+      "category": "mandatory",
+      "img": "4.png",
+      "ur": "موٹر سائیکلوں کا داخلہ ممنوع ہے",
+      "en": "Entry for motorcycles is prohibited"
+    },
+    {
+      "id": 5,
+      "category": "mandatory",
+      "img": "5.png",
+      "ur": "بائیں مڑ جائیں",
+      "en": "Turn left"
+    },
+    {
+      "id": 6,
+      "category": "mandatory",
+      "img": "6.png",
+      "ur": "دائیں مڑ جائیں",
+      "en": "Turn right"
+    },
+    {
+      "id": 7,
+      "category": "mandatory",
+      "img": "7.png",
+      "ur": "اوورٹیکلنگ پر عائد پابندی ختم ہے",
+      "en": "Overtaking restriction is lifted"
+    },
+    {
+      "id": 8,
+      "category": "mandatory",
+      "img": "8.png",
+      "ur": "نو پارکنگ زون",
+      "en": "No parking zone"
+    },
+    {
+      "id": 9,
+      "category": "mandatory",
+      "img": "9.png",
+      "ur": "بائیں چلیں",
+      "en": "Go left"
+    },
+    {
+      "id": 10,
+      "category": "mandatory",
+      "img": "10.png",
+      "ur": "بڑی گاڑیوں کیلئے اوور ٹیکینگ ممنوع ہے",
+      "en": "Overtaking is not allowed for large vehicles"
+    },
+    {
+      "id": 11,
+      "category": "warning",
+      "img": "11.png",
+      "ur": "آگے دہری سڑک شروع ہے",
+      "en": "The dual road starts ahead"
+    },
+    {
+      "id": 12,
+      "category": "mandatory",
+      "img": "12.png",
+      "ur": "آگے داخلہ منع ہے",
+      "en": "Entry ahead is prohibited"
+    },
+    {
+      "id": 13,
+      "category": "mandatory",
+      "img": "13.png",
+      "ur": "5 میٹر تک کی اونچی گاڑیوں کے داخلہ کی اجازت ہے",
+      "en": "Entry allowed for vehicles up to 5 meters in height"
+    },
+    {
+      "id": 14,
+      "category": "mandatory",
+      "img": "14.png",
+      "ur": "قوی حد رفتار نافذ ہے",
+      "en": "Strict speed limit is enforced"
+    },
+    {
+      "id": 15,
+      "category": "mandatory",
+      "img": "15.png",
+      "ur": "پولیس اور کسٹم چیک پوسٹ",
+      "en": "Police and customs checkpoint"
+    },
+    {
+      "id": 16,
+      "category": "mandatory",
+      "img": "16.png",
+      "ur": "رکیں ! دائیں بائیں روڈ کلیر ہونے دیں",
+      "en": "Stop! Allow both sides of the road to clear"
+    },
+    {
+      "id": 17,
+      "category": "mandatory",
+      "img": "17.png",
+      "ur": "۵۰ کلومیٹر فی گھنٹہ حد رفتار کی پابندی ختم ہے",
+      "en": "The speed limit of 50 kilometers per hour is lifted"
+    },
+    {
+      "id": 18,
+      "category": "mandatory",
+      "img": "18.png",
+      "ur": "اوور ٹیکنگ ممنوع ہے",
+      "en": "Overtaking is prohibited"
+    },
+    {
+      "id": 19,
+      "category": "mandatory",
+      "img": "19.png",
+      "ur": "ایک ایکسل پر 8ٹن وزن تک کی گاڑیوں کی اجازت ہے",
+      "en": "Entry allowed for vehicles weighing up to 8 tons on a single axle"
+    },
+    {
+      "id": 20,
+      "category": "mandatory",
+      "img": "20.png",
+      "ur": "ہارن بجانا منع ہے",
+      "en": "Honking is prohibited"
+    },
+    {
+      "id": 21,
+      "category": "mandatory",
+      "img": "21.png",
+      "ur": "پیدل اشخاص کا داخلہ ممنوع ہے",
+      "en": "Entry for pedestrians is prohibited"
+    },
+    {
+      "id": 22,
+      "category": "mandatory",
+      "img": "22.png",
+      "ur": "سامنے سے آنے والی گاڑیوں کے گزرنے کا پہلا حق ہے",
+      "en": "Vehicles coming from the front have the right of way"
+    },
+    {
+      "id": 23,
+      "category": "mandatory",
+      "img": "23.png",
+      "ur": "3 میٹر تک کی چوڑی گاڑیوں کے داخلہ کی اجازت ہے",
+      "en": "Entry allowed for vehicles up to 3 meters in width"
+    },
+    {
+      "id": 24,
+      "category": "mandatory",
+      "img": "24.png",
+      "ur": "سیدھا آگے یا بائیں جائیں",
+      "en": "Go straight or turn left"
+    },
+    {
+      "id": 25,
+      "category": "mandatory",
+      "img": "25.png",
+      "ur": "ہیوی گاڑیوں کا داخلہ ممنوع ہے",
+      "en": "Entry for heavy vehicles is prohibited"
+    },
+    {
+      "id": 26,
+      "category": "mandatory",
+      "img": "26.png",
+      "ur": "لاز می گول چکر داخل ہونے سے قبل دائیں طرف سے آنے والی ٹریفک کو کلیر ہونے دیں",
+      "en": "Before entering a roundabout, allow traffic coming from the right side to clear"
+    },
+    {
+      "id": 27,
+      "category": "mandatory",
+      "img": "27.png",
+      "ur": "حد رفتار 50 کلومیٹر فی گھنٹہ",
+      "en": "Speed limit is 50 kilometers per hour"
+    },
+    {
+      "id": 28,
+      "category": "mandatory",
+      "img": "28.png",
+      "ur": "پارکنگ ممنوع ہے",
+      "en": "No parking is allowed"
+    },
+    {
+      "id": 29,
+      "category": "mandatory",
+      "img": "29.png",
+      "ur": "دائیں مڑنا منع ہے",
+      "en": "Turning right is prohibited"
+    },
+    {
+      "id": 30,
+      "category": "mandatory",
+      "img": "30.png",
+      "ur": "مت رکیں سڑک خالی رکھیں",
+      "en": "Don't stop, keep the road clear"
+    },
+    {
+      "id": 31,
+      "category": "mandatory",
+      "img": "31.png",
+      "ur": "تمام عائد کردہ پابندیاں ختم ہیں",
+      "en": "All imposed restrictions are lifted"
+    },
+    {
+      "id": 32,
+      "category": "mandatory",
+      "img": "32.png",
+      "ur": "آگے پولیس پوسٹ ہےروکنے پر رکیں",
+      "en": "Police post ahead, stop when signaled"
+    },
+    {
+      "id": 33,
+      "category": "warning",
+      "img": "33.png",
+      "ur": "آگے سڑک بند ہے",
+      "en": "The road ahead is closed"
+    },
+    {
+      "id": 34,
+      "category": "mandatory",
+      "img": "34.png",
+      "ur": "رکیں ! دائیں سے آنے والی ٹریفک کو راستہ دینے کے بعد چلیں",
+      "en": "Stop! After giving way to traffic coming from the right side, proceed"
+    },
+    {
+      "id": 35,
+      "category": "mandatory",
+      "img": "35.png",
+      "ur": "سائیکلوں کیلئے داخلہ ممنوع ہے",
+      "en": "Entry for bicycles is prohibited"
+    },
+    {
+      "id": 36,
+      "category": "mandatory",
+      "img": "36.png",
+      "ur": "آگے سے7ٹن لیڈن وزن تک کی گاڑیوں کے داخلہ کی اجازت ہے",
+      "en": "Entry allowed for vehicles weighing up to 7 tons from the front"
+    },
+    {
+      "id": 37,
+      "category": "warning",
+      "img": "37.png",
+      "ur": "آہستہ چلیں",
+      "en": "Drive slowly"
+    },
+    {
+      "id": 38,
+      "category": "mandatory",
+      "img": "38.png",
+      "ur": "جانوروں سے کھینچی جانے والی گاڑیوں کا داخلہ ممنوع ہے",
+      "en": "Entry for vehicles attracting animals is prohibited"
+    },
+    {
+      "id": 39,
+      "category": "mandatory",
+      "img": "39.png",
+      "ur": "وائیں چلیں",
+      "en": "Turn left"
+    },
+    {
+      "id": 40,
+      "category": "mandatory",
+      "img": "40.png",
+      "ur": "دائیں مڑ جائیں",
+      "en": "Turn right"
+    },
+    {
+      "id": 41,
+      "category": "mandatory",
+      "img": "41.png",
+      "ur": "10 میٹر سے لمبی گاڑیوں کا داخلہ منع ہے",
+      "en": "Entry for vehicles longer than 10 meters is prohibited"
+    },
+    {
+      "id": 42,
+      "category": "mandatory",
+      "img": "42.png",
+      "ur": "بائیں مڑ جائیں",
+      "en": "Turn left"
+    },
+    {
+      "id": 43,
+      "category": "mandatory",
+      "img": "43.png",
+      "ur": "یوٹرن منع ہے",
+      "en": "U-turn is prohibited"
+    },
+    {
+      "id": 44,
+      "category": "mandatory",
+      "img": "44.png",
+      "ur": "زیادہ سے زیادہ حد رفتار 60 کلومیٹر فی گھنٹہ",
+      "en": "Maximum speed limit is 60 kilometers per hour"
+    },
+    {
+      "id": 45,
+      "category": "mandatory",
+      "img": "45.png",
+      "ur": "سیدھا آگے جائیں",
+      "en": "Go straight ahead"
+    },
+    {
+      "id": 46,
+      "category": "mandatory",
+      "img": "46.png",
+      "ur": "تمام گاڑیوں کا داخلہ ممنوع ہے",
+      "en": "Entry for all vehicles is prohibited"
+    },
+    {
+      "id": 47,
+      "category": "mandatory",
+      "img": "47.png",
+      "ur": "30 کلومیٹر فی گھنٹہ رفتار والا علاقہ ختم ہے اب 50 کلو میٹر فی گھنٹہ رفتار والےعلاقہ میں داخل ہو رہے ہیں",
+      "en": "The area with a speed limit of 30 kilometers per hour is over; now entering an area with a speed limit of 50 kilometers per hour"
+    },
+    {
+      "id": 48,
+      "category": "mandatory",
+      "img": "48.png",
+      "ur": "لین کنٹرول سائن بورڈ اپنی لین میں رہیں",
+      "en": "Stay in your lane according to the control signboard"
+    },
+    {
+      "id": 49,
+      "category": "warning",
+      "img": "49.png",
+      "ur": "آگے خطرہ ہے جانے سے گریز کریں",
+      "en": "Danger ahead, avoid going further"
+    },
+    {
+      "id": 50,
+      "category": "warning",
+      "img": "50.png",
+      "ur": "بائیں طرف چھوٹی سڑک نکلتی ہے",
+      "en": "A small road exits on the left side"
+    },
+    {
+      "id": 51,
+      "category": "warning",
+      "img": "51.png",
+      "ur": "آگے \"Y\"چوک میں دائیں سےآنے والی گاڑیوں کو راستہ دیں",
+      "en": "At the \"Y\"intersection ahead, give way to vehicles coming from the right"
+    },
+    {
+      "id": 52,
+      "category": "warning",
+      "img": "52.png",
+      "ur": "سڑک پر کام ہو رہا ہے",
+      "en": "Roadwork is in progress"
+    },
+    {
+      "id": 53,
+      "category": "warning",
+      "img": "53.png",
+      "ur": "دائیں طرف موڑ ہے",
+      "en": "There is a turn to the right"
+    },
+    {
+      "id": 54,
+      "category": "warning",
+      "img": "54.png",
+      "ur": "آگے گول چکر آنے والا ہے",
+      "en": "A roundabout is approaching ahead"
+    },
+    {
+      "id": 55,
+      "category": "warning",
+      "img": "55.png",
+      "ur": "آگے سڑک تنگ ہو رہی ہے",
+      "en": "The road ahead is narrowing"
+    },
+    {
+      "id": 56,
+      "category": "warning",
+      "img": "56.png",
+      "ur": "آگے بچوں کے سڑک پار کرنے کا راستہ ہے",
+      "en": "The road ahead is for crossing by children"
+    },
+    {
+      "id": 57,
+      "category": "warning",
+      "img": "57.png",
+      "ur": "آگے کھلنے ، اوپر نیچےہونے والا پل ہے",
+      "en": "Ahead, there is an opening, an overpass is above and below"
+    },
+    {
+      "id": 58,
+      "category": "warning",
+      "img": "58.png",
+      "ur": "سڑک کے کنارے نرم ہیں",
+      "en": "The road edges are soft"
+    },
+    {
+      "id": 59,
+      "category": "warning",
+      "img": "59.png",
+      "ur": "تیز ہوا کا علاقہ",
+      "en": "Windy area"
+    },
+    {
+      "id": 60,
+      "category": "warning",
+      "img": "60.png",
+      "ur": "دائیں طرف چھوٹی سڑک نکلتی ہے",
+      "en": "A small road exits on the right side"
+    },
+    {
+      "id": 61,
+      "category": "warning",
+      "img": "61.png",
+      "ur": "آگے موڑ میں چوک ہے",
+      "en": "There is a junction ahead"
+    },
+    {
+      "id": 62,
+      "category": "warning",
+      "img": "62.png",
+      "ur": "جنگلی حیوانات کے گزرنے کی جگہ",
+      "en": "Place for the passage of wild animals"
+    },
+    {
+      "id": 63,
+      "category": "warning",
+      "img": "63.png",
+      "ur": "آگے مختلف نوعیت کے خطرات ہیں احتیاط سے چلیں",
+      "en": "Ahead, there are various types of dangers; walk cautiously"
+    },
+    {
+      "id": 64,
+      "category": "warning",
+      "img": "64.png",
+      "ur": "چھوٹی سڑک دائیں سےبڑی سڑک سے مل رہی ہے",
+      "en": "A small road is merging from the right into the main road"
+    },
+    {
+      "id": 65,
+      "category": "warning",
+      "img": "65.png",
+      "ur": "آگے اترائی ہے",
+      "en": "Descend ahead"
+    },
+    {
+      "id": 66,
+      "category": "warning",
+      "img": "66.png",
+      "ur": "آگے پتھروں کے ہونےگرنے کا خدشہ",
+      "en": "Be cautious about falling rocks ahead"
+    },
+    {
+      "id": 67,
+      "category": "warning",
+      "img": "67.png",
+      "ur": "آگے بڑی سڑک اس چھوٹی سڑک کو کراس کر رہی ہے",
+      "en": "The main road is crossing this small road ahead"
+    },
+    {
+      "id": 68,
+      "category": "warning",
+      "img": "68.png",
+      "ur": "بائیں طرف موڑ ہے",
+      "en": "Turn left"
+    },
+    {
+      "id": 69,
+      "category": "warning",
+      "img": "69.png",
+      "ur": "آگے سڑک میں نشیب ہے",
+      "en": "There is an incline in the road ahead"
+    },
+    {
+      "id": 70,
+      "category": "warning",
+      "img": "70.png",
+      "ur": "آگے محرابی پل ہے",
+      "en": "Ahead, there is a bridge"
+    },
+    {
+      "id": 71,
+      "category": "warning",
+      "img": "71.png",
+      "ur": "چھوٹی سڑک دائیں سے آکر بڑی سڑک سے مل رہی ہے",
+      "en": "The small road is merging from the right into the main road"
+    },
+    {
+      "id": 72,
+      "category": "warning",
+      "img": "72.png",
+      "ur": "آگے دو طرفہ ٹریفک ہے رفتار آہستہ کریں",
+      "en": "Two-way traffic ahead, reduce speed"
+    },
+    {
+      "id": 73,
+      "category": "warning",
+      "img": "73.png",
+      "ur": "آگے سائیکل کے گزرنے کی جگہ",
+      "en": "Place for the passage of bicycles ahead"
+    },
+    {
+      "id": 74,
+      "category": "warning",
+      "img": "74.png",
+      "ur": "چھوٹی سڑک بائیں طرف سے بڑی سڑک سے مل رہی ہے",
+      "en": "The small road is merging from the left into the main road"
+    },
+    {
+      "id": 75,
+      "category": "warning",
+      "img": "75.png",
+      "ur": "آگے سے دائیں مڑ سکتے ہیں",
+      "en": "Can turn right ahead"
+    },
+    {
+      "id": 76,
+      "category": "warning",
+      "img": "76.png",
+      "ur": "آگے چھوٹی سڑکیں بالترتیب بائیں اور دائیں طرف سے آکر اس بڑی سڑک سے مل رہی ہیں",
+      "en": "Small roads ahead, sequentially merging from both left and right into the main road"
+    },
+    {
+      "id": 77,
+      "category": "warning",
+      "img": "77.png",
+      "ur": "آگے دائیں لین بند ہے بائیں لین میں چلیں",
+      "en": "The right lane is closed ahead, proceed in the left lane"
+    },
+    {
+      "id": 78,
+      "category": "warning",
+      "img": "78.png",
+      "ur": "ٹریفک اشارے قابل کار نہیں",
+      "en": "Traffic signals are not operational"
+    },
+    {
+      "id": 79,
+      "category": "warning",
+      "img": "79.png",
+      "ur": "راسته فوری تبدیلی بائیں طرف",
+      "en": "Change direction immediately to the left"
+    },
+    {
+      "id": 80,
+      "category": "warning",
+      "img": "80.png",
+      "ur": "آگے تنگ پل ہے",
+      "en": "The bridge ahead is narrow"
+    },
+    {
+      "id": 81,
+      "category": "warning",
+      "img": "81.png",
+      "ur": "دائیں طرف دہرا موڑ ہے",
+      "en": "There is a double turn to the right ahead"
+    },
+    {
+      "id": 82,
+      "category": "warning",
+      "img": "82.png",
+      "ur": "پتھروں کے اڑ کر لگنے کا خدشہ",
+      "en": "Be cautious about loose rocks"
+    },
+    {
+      "id": 83,
+      "category": "warning",
+      "img": "83.png",
+      "ur": "سڑک اور بجلی کے تار ہیں پلیٹ پر گاڑیوں کی زیادہ سے زیادہ اونچائی درج ہو گی جو اس کے نیچے سے گزر سکتی ہیں",
+      "en": "There are road and power lines; the height of vehicles on the bridge may be restricted, allowing passage underneath"
+    },
+    {
+      "id": 84,
+      "category": "warning",
+      "img": "84.png",
+      "ur": "آگے مویشیوں کے گزرنے کا راستہ ہے",
+      "en": "Path for the passage of livestock ahead"
+    },
+    {
+      "id": 85,
+      "category": "warning",
+      "img": "85.png",
+      "ur": "آگے گاڑی کی نچلی سطح لگنے کا اندیشہ ہے",
+      "en": "Concern about the lower surface of the car landing ahead"
+    },
+    {
+      "id": 86,
+      "category": "warning",
+      "img": "86.png",
+      "ur": "آگے آنے والے چوک میں دائیں طرف سے آنے والی گاڑیوں کا پہلے حق ہے",
+      "en": "At the upcoming junction, vehicles coming from the right have the first right of way"
+    },
+    {
+      "id": 87,
+      "category": "warning",
+      "img": "87.png",
+      "ur": "آگے سڑک دائیں طرف سے تنگ ہو رہی ہے",
+      "en": "The road ahead is narrowing from the right side"
+    },
+    {
+      "id": 88,
+      "category": "warning",
+      "img": "88.png",
+      "ur": "آگے بائیں لین بند ہے دائیں لین میں چلیں",
+      "en": "The right lane is closed ahead; proceed in the left lane"
+    },
+    {
+      "id": 89,
+      "category": "warning",
+      "img": "89.png",
+      "ur": "گیٹ والا ریلوے پھاٹک",
+      "en": "Railway crossing with a gate"
+    },
+    {
+      "id": 90,
+      "category": "warning",
+      "img": "90.png",
+      "ur": "آگے ٹی کراس ہے",
+      "en": "There is a T-crossing ahead"
+    },
+    {
+      "id": 91,
+      "category": "warning",
+      "img": "91.png",
+      "ur": "آگے یوٹرن ہے",
+      "en": "U-turn is ahead"
+    },
+    {
+      "id": 92,
+      "category": "warning",
+      "img": "92.png",
+      "ur": "سڑک پر پھسلن ہے",
+      "en": "Slippery road ahead"
+    },
+    {
+      "id": 93,
+      "category": "warning",
+      "img": "93.png",
+      "ur": "آگے چھوٹی سڑکیں بالترتیب دائیں، بائیں سے بڑی سڑک سے مل رہی ہیں",
+      "en": "Small roads ahead, sequentially merging from the right and left into the main road"
+    },
+    {
+      "id": 94,
+      "category": "warning",
+      "img": "94.png",
+      "ur": "آگے چڑھائی ہے",
+      "en": "There is an incline ahead"
+    },
+    {
+      "id": 95,
+      "category": "warning",
+      "img": "95.png",
+      "ur": "آگے دو طرفہ ٹریفک یک طرفہ سڑک کو کراس کرتی ہے",
+      "en": "Two-way traffic ahead, crossing a one-way road"
+    },
+    {
+      "id": 96,
+      "category": "warning",
+      "img": "96.png",
+      "ur": "آگے برفباری کا علاقہ ہے",
+      "en": "Ahead is a snowfall-prone area"
+    },
+    {
+      "id": 97,
+      "category": "road_marking",
+      "img": "97.png",
+      "ur": "درمیانی لکیر اوور ٹیکنگ کی اجازت ہے",
+      "en": "Overtaking is allowed on the center line"
+    },
+    {
+      "id": 98,
+      "category": "road_marking",
+      "img": "98.png",
+      "ur": "بکس چوک اس چوک میں زرد لینوں پر رکنا منع ہے",
+      "en": "It is prohibited to stop on yellow lines at the box intersection"
+    },
+    {
+      "id": 99,
+      "category": "road_marking",
+      "img": "99.png",
+      "ur": "پیلی لکیر کے باہر پارکنگ ممنوع ہے",
+      "en": "No parking is allowed outside the yellow line"
+    },
+    {
+      "id": 100,
+      "category": "road_marking",
+      "img": "100.png",
+      "ur": "رکنا منع ہے",
+      "en": "Stopping is prohibited"
+    },
+    {
+      "id": 101,
+      "category": "road_marking",
+      "img": "101.png",
+      "ur": "گول چکر ، دائیں سے آنے والی ٹریفک کو راستہ دیں",
+      "en": "Roundabout:Give way to traffic coming from the right"
+    },
+    {
+      "id": 102,
+      "category": "road_marking",
+      "img": "102.png",
+      "ur": "بکس چوک اس چوک میں زرد لینوں پر رکنا منع ہے",
+      "en": "At the box intersection, stopping on yellow lines is prohibited"
+    },
+    {
+      "id": 103,
+      "category": "road_marking",
+      "img": "103.png",
+      "ur": "درمیانی لکیر اوور ٹیکنگ کرنا منع ہے",
+      "en": "Overtaking on the center line is not allowed"
+    },
+    {
+      "id": 104,
+      "category": "road_marking",
+      "img": "104.png",
+      "ur": "رکنے کی لکیر چوک میں داخل ہونے سے قبل رکیں",
+      "en": "Stop before entering the box intersection at the stopping line"
+    },
+    {
+      "id": 105,
+      "category": "road_marking",
+      "img": "105.png",
+      "ur": "راستہ دینے کا انتباہی نشان",
+      "en": "Warning sign for giving way"
+    },
+    {
+      "id": 106,
+      "category": "road_marking",
+      "img": "106.png",
+      "ur": "رکنے کے سائن بورڈ کا انتباہی نشان",
+      "en": "Warning sign on the stop line board"
+    },
+    {
+      "id": 107,
+      "category": "road_marking",
+      "img": "107.png",
+      "ur": "اگر سامنے سے کوئی گاڑی نہ آرہی ہو تو اوور ٹیکنگ کی اجازت ہے",
+      "en": "If there is no oncoming traffic from the front, overtaking is allowed"
+    },
+    {
+      "id": 108,
+      "category": "road_marking",
+      "img": "108.png",
+      "ur": "اوور ٹیکینگ منع ہے",
+      "en": "Overtaking is prohibited"
+    },
+    {
+      "id": 109,
+      "category": "informative",
+      "img": "109.png",
+      "ur": "گاڑی ٹھہرانے کی جگہ کی سمت",
+      "en": "Direction to the parking area"
+    },
+    {
+      "id": 110,
+      "category": "informative",
+      "img": "110.png",
+      "ur": "گاڑی ٹھہرانے کی جگہ کی سمت",
+      "en": "Direction to the parking area"
+    },
+    {
+      "id": 111,
+      "category": "informative",
+      "img": "111.png",
+      "ur": "ابتدائی طبی امداد کا مرکز",
+      "en": "Primary medical aid center"
+    },
+    {
+      "id": 112,
+      "category": "informative",
+      "img": "112.png",
+      "ur": "ہوٹل یا موئل",
+      "en": "Hotel or motel"
+    },
+    {
+      "id": 113,
+      "category": "informative",
+      "img": "113.png",
+      "ur": "ریستوران",
+      "en": "Restaurant"
+    },
+    {
+      "id": 114,
+      "category": "informative",
+      "img": "114.png",
+      "ur": "کیفے ٹیریا",
+      "en": "Café area"
+    },
+    {
+      "id": 115,
+      "category": "informative",
+      "img": "115.png",
+      "ur": "کیمپ لگانے کی جگہ",
+      "en": "Camping site"
+    },
+    {
+      "id": 116,
+      "category": "informative",
+      "img": "116.png",
+      "ur": "پکنک کی جگہ",
+      "en": "Picnic spot"
+    },
+    {
+      "id": 117,
+      "category": "informative",
+      "img": "117.png",
+      "ur": "کاروان ٹھہرانے کی جگہ",
+      "en": "Caravan parking area"
+    },
+    {
+      "id": 118,
+      "category": "informative",
+      "img": "118.png",
+      "ur": "ٹیلی فون کی سہولت",
+      "en": "Telephone facility"
+    },
+    {
+      "id": 119,
+      "category": "informative",
+      "img": "119.png",
+      "ur": "پٹرول پمپ",
+      "en": "Petrol pump"
+    },
+    {
+      "id": 120,
+      "category": "informative",
+      "img": "120.png",
+      "ur": "گاڑی ٹھہرانے کی جگہ کی سمت",
+      "en": "Direction to the parking area"
+    },
+    {
+      "id": 121,
+      "category": "informative",
+      "img": "121.png",
+      "ur": "بس سٹاپ",
+      "en": "Bus stop"
+    },
+    {
+      "id": 122,
+      "category": "informative",
+      "img": "122.png",
+      "ur": "سمت کا سائن بورڈ",
+      "en": "Direction signboard"
+    },
+    {
+      "id": 123,
+      "category": "informative",
+      "img": "123.png",
+      "ur": "ہسپتال",
+      "en": "Hospital"
+    },
+    {
+      "id": 124,
+      "category": "road_marking",
+      "img": "124.png",
+      "ur": "لین کنٹرول مارکنگ ، ٹریفک صرف تیر کی سمت ہی جا سکتی ہے",
+      "en": "Lane control marking: Traffic can only go in the direction of the arrow"
+    },
+    {
+      "id": 125,
+      "category": "informative",
+      "img": "125.png",
+      "ur": "گاڑی ٹھہرانے کی جگہ کی سمت",
+      "en": "Direction to the parking area"
+    },
+    {
+      "id": 126,
+      "category": "informative",
+      "img": "126.png",
+      "ur": "بیت الخلا کی سمت",
+      "en": "Direction to the house of worship"
+    },
+    {
+      "id": 127,
+      "category": "informative",
+      "img": "127.png",
+      "ur": "موٹروے شروع",
+      "en": "Start of the motorway"
+    },
+    {
+      "id": 128,
+      "category": "informative",
+      "img": "128.png",
+      "ur": "موٹر وے کا اختتام",
+      "en": "End of the motorway"
+    },
+    {
+      "id": 129,
+      "category": "informative",
+      "img": "129.png",
+      "ur": "موٹروے سے اخراج 300 میٹر بعد",
+      "en": "Exit from the motorway after 300 meters"
+    },
+    {
+      "id": 130,
+      "category": "informative",
+      "img": "130.png",
+      "ur": "موٹروے سے اخراج 200 میٹر بعد",
+      "en": "Exit from the motorway after 200 meters"
+    },
+    {
+      "id": 131,
+      "category": "informative",
+      "img": "131.png",
+      "ur": "موٹروے سے اخراج 100 میٹر بعد",
+      "en": "Exit from the motorway after 100 meters"
+    },
+    {
+      "id": 132,
+      "category": "informative",
+      "img": "132.png",
+      "ur": "شهری حدود شروع",
+      "en": "Start of city limits"
+    },
+    {
+      "id": 133,
+      "category": "informative",
+      "img": "133.png",
+      "ur": "کسی شہر کی سمت اور فاصلہ",
+      "en": "Direction and distance to a city"
+    },
+    {
+      "id": 134,
+      "category": "informative",
+      "img": "134.png",
+      "ur": "یکطرفہ سرک",
+      "en": "One-way road"
+    },
+    {
+      "id": 135,
+      "category": "informative",
+      "img": "135.png",
+      "ur": "شہری حدود ختم",
+      "en": "End of city limits"
+    },
+    {
+      "id": 136,
+      "category": "informative",
+      "img": "136.png",
+      "ur": "ہوائی اڈہ کی سمت",
+      "en": "Direction to the airport"
+    },
+    {
+      "id": 137,
+      "category": "informative",
+      "img": "137.png",
+      "ur": "سرے پر سڑک بند ہے",
+      "en": "Road closed at the bridge"
+    },
+    {
+      "id": 138,
+      "category": "informative",
+      "img": "138.png",
+      "ur": "دائیں نکلنے والی سڑک آگے بند ہے",
+      "en": "Right-turning road ahead is closed"
+    },
+    {
+      "id": 139,
+      "category": "informative",
+      "img": "139.png",
+      "ur": "بائیں نکلنے والی سڑک آگے بند ہے",
+      "en": "Left-turning road ahead is closed"
+    },
+    {
+      "id": 140,
+      "category": "informative",
+      "img": "140.png",
+      "ur": "سیاحوں کیلئے معلومات کی جگہ",
+      "en": "Information center for tourists"
+    },
+    {
+      "id": 141,
+      "category": "informative",
+      "img": "141.png",
+      "ur": "متذکرہ فاصلے پر انتہائی دائیں لین کی بندش",
+      "en": "No right turn at extreme right lane for the specified distance"
+    },
+    {
+      "id": 142,
+      "category": "informative",
+      "img": "142.png",
+      "ur": "جانے والی گاڑیوں کا پہلا حق ہے",
+      "en": "The first right of way for oncoming vehicles"
+    },
+    {
+      "id": 143,
+      "category": "road_marking",
+      "img": "143.png",
+      "ur": "زیبرا کراسنگ، ان لکیروں پر گاڑی روکنا منع ہے",
+      "en": "Zebra crossing: It is prohibited to stop the car on these lines"
+    },
+    {
+      "id": 144,
+      "category": "informative",
+      "img": "144.png",
+      "ur": "چڑیا گھر",
+      "en": "Zoo"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": 1,
+      "question_en": "Vehicle A is inside the roundabout, and Vehicle B is waiting to enter. Who has the right of way?",
+      "question_ur": "گاڑی A گول چکر کے اندر ہے اور گاڑی B داخل ہونے کا انتظار کر رہی ہے۔ پہلے گزرنے کا حق کس کا ہے؟",
+      "image": "scen_roundabout.png",
+      "options": [
+        {
+          "en": "Vehicle A has priority; vehicles entering must yield to traffic already in the roundabout.",
+          "ur": "گاڑی A کو پہل حاصل ہے؛ داخل ہونے والی گاڑیوں کو پہلے سے موجود ٹریفک کو راستہ دینا ہوگا فائدہ۔",
+          "correct": true
+        },
+        {
+          "en": "Vehicle B has priority because it is entering from the left lane.",
+          "ur": "گاڑی B کو پہل حاصل ہے کیونکہ وہ بائیں لین سے داخل ہو رہی ہے۔",
+          "correct": false
+        },
+        {
+          "en": "Both can enter simultaneously without slowing down.",
+          "ur": "دونوں گاڑیاں رفتار کم کیے بغیر بیک وقت داخل ہو سکتی ہیں۔",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question_en": "Your exit lane is blocked but the traffic light is green. Are you allowed to enter the yellow box junction?",
+      "question_ur": "آپ کا باہر نکلنے والا راستہ بند ہے لیکن اشارہ سبز ہے۔ کیا آپ کو پیلے بکس چوک میں داخل ہونے کی اجازت ہے؟",
+      "image": "scen_box_junction.png",
+      "options": [
+        {
+          "en": "Yes, a green signal always gives you permission to proceed.",
+          "ur": "ہاں، سبز اشارہ ہمیشہ آگے بڑھنے کی اجازت دیتا ہے۔",
+          "correct": false
+        },
+        {
+          "en": "No, you must wait behind the line until your exit is clear to avoid blocking the intersection.",
+          "ur": "نہیں، چوک بلاک ہونے سے بچانے کے لیے آپ کو باہر کا راستہ صاف ہونے تک لکیر کے پیچھے انتظار کرنا ہوگا۔",
+          "correct": true
+        },
+        {
+          "en": "Yes, but only if you continuously honk to warn other traffic.",
+          "ur": "ہاں، لیکن صرف اس صورت میں جب آپ دوسرے ٹریفک کو متنبہ کرنے کے لیے مسلسل ہارن بجائیں۔",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question_en": "Are you allowed to cross a solid white double center line on a road to overtake another vehicle?",
+      "question_ur": "کیا آپ کو کسی دوسری گاڑی کو اوور ٹیک کرنے کے لیے سڑک پر موجود دہری ٹھوس سفید لکیر کو پار کرنے کی اجازت ہے؟",
+      "image": "scen_solid_line.png",
+      "options": [
+        {
+          "en": "Yes, if there is no oncoming traffic visible ahead.",
+          "ur": "ہاں، اگر سامنے سے کوئی ٹریفک آتی دکھائی نہ دے رہی ہو۔",
+          "correct": false
+        },
+        {
+          "en": "No, crossing double solid lines is strictly prohibited except for avoiding an obstruction.",
+          "ur": "نہیں، دہری ٹھوس لکیروں کو پار کرنا سخت ممنوع ہے سوائے کسی بڑی رکاوٹ سے بچنے کے۔",
+          "correct": true
+        },
+        {
+          "en": "Yes, but only during daylight hours.",
+          "ur": "ہاں، لیکن صرف دن کے اوقات میں۔",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question_en": "When driving in dense fog on highways or motorways, which lights should you keep switched on?",
+      "question_ur": "ہائی ویز یا موٹرویز پر شدید دھند میں گاڑی چلاتے وقت، آپ کو کون سی لائٹس آن رکھنی چاہئیں؟",
+      "image": "scen_fog.png",
+      "options": [
+        {
+          "en": "High-beam headlights to pierce through the heavy fog.",
+          "ur": "ہائی بیم ہیڈلائٹس تاکہ گھنی دھند کو واضح طور پر دیکھا جا سکے۔",
+          "correct": false
+        },
+        {
+          "en": "Low-beam headlights along with dedicated front and rear fog lights.",
+          "ur": "لو بیم ہیڈلائٹس کے ساتھ مخصوص اگلی اور پچھلی فوگ لائٹس۔",
+          "correct": true
+        },
+        {
+          "en": "Hazard warning lights continuously while traveling at high speeds.",
+          "ur": "تیز رفتاری سے سفر کرتے ہوئے مسلسل ایمرجنسی (ہیزرڈ) لائٹس۔",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question_en": "At an unmarked intersection with equal road size, which vehicle has the right of way?",
+      "question_ur": "مساوی سڑک کے بغیر نشان والے چوک پر، کس گاڑی کو پہلے گزرنے کا حق حاصل ہوتا ہے؟",
+      "image": "scen_intersection.png",
+      "options": [
+        {
+          "en": "The vehicle coming from your right side.",
+          "ur": "وہ گاڑی جو آپ کے دائیں طرف سے آ رہی ہو۔",
+          "correct": true
+        },
+        {
+          "en": "The vehicle moving at the highest speed.",
+          "ur": "وہ گاڑی جو سب سے زیادہ رفتار سے چل رہی ہو۔",
+          "correct": false
+        },
+        {
+          "en": "The vehicle arriving from the left side.",
+          "ur": "وہ گاڑی جو بائیں طرف سے آ رہی ہو۔",
+          "correct": false
+        }
+      ]
+    }
+  ]
+}

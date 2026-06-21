@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Prepare for the official Pakistani computerized driving license e-sign test. Learn road markings, traffic signs, and right-of-way rules with interactive visualizers and mock exams.">
+    <meta name="keywords"
+        content="PakSigns, traffic signs Pakistan, driving license test Pakistan, DLIMS test preparation, computerized sign test, e-sign test, road markings, Urdu driving guide">
+    <meta name="author" content="GGCOkara, Pro Bandey, M Ramzan Ch">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PakSigns - Pakistan Traffic Signs Learning & License">
+    <meta property="og:description"
+        content="Prepare for the official Pakistani computerized driving license e-sign test with interactive flashcards, visual road guides, and exam simulations.">
+    <meta property="og:url" content="https://GGCOkara.github.io/PakSigns/">
+    <meta property="og:image" content="src/social-1.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PakSigns - Pakistan Traffic Signs ">
+    <meta name="twitter:description"
+        content="Interactive helper application for learning Pakistani traffic signs, road rules, and simulated DLIMS exams.">
+    <meta name="twitter:image" content="src/social-1.png">
+
+    <meta name="theme-color" content="#006837">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Arabic:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="canonical" href="https://mainroute-core.github.io/">
+    <link rel="shortcut icon" type="image/x-icon" sizes="any" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/32.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="/src/144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/src/192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/src/512.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/src/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js" defer></script>
+
+    <title>PakSigns | Pakistan Traffic Signs By GGCOkara</title>
+</head>
+
+<body class="m3-theme-light">
+    <div id="language-onboarding-modal" class="modal-overlay hidden" role="dialog"
+        aria-labelledby="onboarding-welcome-title" aria-describedby="onboarding-welcome-desc">
+        <div class="m3-card onboarding-card">
+            <h2 id="onboarding-welcome-title">Welcome to PakSigns</h2>
+            <p id="onboarding-welcome-desc">Please choose your preferred driving learning language.</p>
+            <div class="onboarding-actions">
+                <button id="btn-onboard-en" class="m3-button-filled">English</button>
+                <button id="btn-onboard-ur" class="m3-button-tonal">اردو (Urdu)</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="info-sidebar-overlay" class="sidebar-overlay hidden"></div>
+    <aside id="info-sidebar" class="m3-sidebar-drawer" role="complementary" aria-label="App Information">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <svg class="sidebar-brand-icon">
+                    <use href="#icon-info"></use>
+                </svg>
+                <div>
+                    <h2 class="sidebar-app-name">PakSigns</h2>
+                    <span class="sidebar-app-version">v1.1.0</span>
+                </div>
+            </div>
+            <button id="btn-close-sidebar" class="m3-icon-button" aria-label="Close Info Sidebar">
+                <svg class="m3-icon">
+                    <use href="#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <p class="sidebar-tagline">Pakistan Traffic Signs Learning App</p>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Overview</h3>
+                <p class="sidebar-text">
+                    PakSigns is a dedicated educational helper tool designed to assist driving license candidates in
+                    learning Pakistani traffic signs, understanding road marking rules, and successfully passing their
+                    computerized driving license theory tests (DLIMS).
+                </p>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Features Included</h3>
+                <ul class="sidebar-list">
+                    <li><strong>Study Guides:</strong> Categorized directory of signs with Urdu and English
+                        translations.</li>
+                    <li><strong>Audio Pronunciation:</strong> High quality local text-to-speech option to read sign
+                        meanings out loud.</li>
+                    <li><strong>Interactive Road:</strong> Graphical visualizer displaying lane marking requirements.
+                    </li>
+                    <li><strong>DLIMS Mock Exam:</strong> Simulated mock tests under practice configurations and strict
+                        examination rules.</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Usage Guidelines</h3>
+                <p class="sidebar-text">
+                    Navigate between screens using the top application tabs. Customize your exam length and layout
+                    parameters under the "Test" setup configurations. Save complex signs with the star icon to review
+                    them in the "Saved" category.
+                </p>
+            </div>
+        </div>
+    </aside>
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon-book" viewBox="0 0 24 24">
+            <path
+                d="M12 11.55C11.2 10.32 9.7 9.5 8 9.5c-1.7 0-3.2.82-4 2.05V5c0-1.1.9-2 2-2h2c1.7 0 3.2.82 4 2.05M12 11.55c.8-1.23 2.3-2.05 4-2.05 1.7 0 3.2.82 4 2.05V5c0-1.1-.9-2-2-2h-2c-1.7 0-3.2-4 2.05m0 6.5v-6.5m-6 3.5h4M18 11.5h-4"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+        <symbol id="icon-quiz" viewBox="0 0 24 24">
+            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-miterlimit="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="12" cy="17" r="1" fill="currentColor" />
+        </symbol>
+        <symbol id="icon-bookmark" viewBox="0 0 24 24">
+            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linejoin="round" />
+        </symbol>
+        <symbol id="icon-bookmark-filled" viewBox="0 0 24 24">
+            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" fill="currentColor" />
+        </symbol>
+        <symbol id="icon-progress" viewBox="0 0 24 24">
+            <path d="M18 20V10M12 20V4M6 20v-6" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+        <symbol id="icon-search" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2" />
+            <path d="m21 21-4.3-4.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </symbol>
+        <symbol id="icon-volume" viewBox="0 0 24 24">
+            <path d="M11 5 6 9H2v6h4l5 4V5z" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linejoin="round" />
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" />
+        </symbol>
+        <symbol id="icon-translate" viewBox="0 -960 960 960">
+            <path fill="currentColor" stroke-linecap="round"
+                d="m476-80 182-480h84L924-80h-84l-43-122H603L560-80h-84ZM160-200l-56-56 202-202q-35-35-63.5-80T190-640h84q20 39 40 68t48 58q33-33 68.5-92.5T484-720H40v-80h280v-80h80v80h280v80H564q-21 72-63 148t-83 116l96 98-30 82-122-125-202 201Zm468-72h144l-72-204-72 204Z" />
+        </symbol>
+        <symbol id="icon-theme" viewBox="0 0 24 24">
+            <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+        </symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24">
+            <path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
+        <symbol id="icon-close" viewBox="0 0 24 24">
+            <path d="M18 6 6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </symbol>
+        <symbol id="icon-timer" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+            <path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </symbol>
+        <symbol id="icon-flashcards" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+            <line x1="7" y1="8" x2="17" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <line x1="7" y1="12" x2="13" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </symbol>
+        <symbol id="icon-rotate" viewBox="0 0 24 24">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.67-.67" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+        <symbol id="icon-road" viewBox="0 0 24 24">
+            <path d="M4 22L8 2M20 22L16 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <line x1="12" y1="4" x2="12" y2="8" stroke="currentColor" stroke-width="2" stroke-dasharray="2 2"
+                stroke-linecap="round" />
+            <line x1="12" y1="12" x2="12" y2="16" stroke="currentColor" stroke-width="2" stroke-dasharray="2 2"
+                stroke-linecap="round" />
+            <line x1="12" y1="20" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-dasharray="2 2"
+                stroke-linecap="round" />
+        </symbol>
+        <symbol id="icon-game" viewBox="0 0 24 24">
+            <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+            <path d="M6 12h4m-2-2v4M15 11h.01M18 13h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
+        <symbol id="icon-info" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+            <line x1="12" y1="16" x2="12" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <line x1="12" y1="8" x2="12.01" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </symbol>
+    </svg>
+
+    <header class="m3-top-app-bar-wrapper">
+        <div class="m3-top-app-bar">
+            <div class="app-bar-brand">
+                <span class="app-title-en">PakSigns</span>
+            </div>
+            <div class="app-bar-actions">
+                <button id="btn-info-toggle" class="m3-icon-button" title="App Information"
+                    aria-label="Toggle Info Drawer">
+                    <svg class="m3-icon">
+                        <use href="#icon-info"></use>
+                    </svg>
+                </button>
+                <button id="btn-language-toggle" class="m3-icon-button" title="Switch Language"
+                    aria-label="Toggle Language">
+                    <svg class="m3-icon">
+                        <use href="#icon-translate"></use>
+                    </svg>
+                </button>
+                <button id="btn-theme-toggle" class="m3-icon-button" title="Toggle Theme" aria-label="Toggle Dark Mode">
+                    <svg class="m3-icon">
+                        <use href="#icon-theme"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <nav class="m3-navigation-bar top-nav" role="navigation" aria-label="Primary Navigation">
+            <button class="nav-item active" data-tab="dashboard">
+                <div class="nav-icon-container">
+                    <svg class="nav-icon">
+                        <use href="#icon-progress"></use>
+                    </svg>
+                </div>
+                <span class="nav-label" id="nav-label-home">Home</span>
+            </button>
+            <button class="nav-item" data-tab="study">
+                <div class="nav-icon-container">
+                    <svg class="nav-icon">
+                        <use href="#icon-book"></use>
+                    </svg>
+                </div>
+                <span class="nav-label" id="nav-label-study">Study</span>
+            </button>
+            <button class="nav-item" data-tab="quiz">
+                <div class="nav-icon-container">
+                    <svg class="nav-icon">
+                        <use href="#icon-quiz"></use>
+                    </svg>
+                </div>
+                <span class="nav-label" id="nav-label-test">Test</span>
+            </button>
+            <button class="nav-item" data-tab="bookmarks">
+                <div class="nav-icon-container">
+                    <svg class="nav-icon">
+                        <use href="#icon-bookmark"></use>
+                    </svg>
+                </div>
+                <span class="nav-label" id="nav-label-saved">Saved</span>
+            </button>
+        </nav>
+    </header>
+
+    <main class="m3-container">
+        <section id="view-dashboard" class="app-view active" aria-labelledby="dash-welcome-title">
+            <div class="dashboard-hero">
+                <h1 class="welcome-heading" id="dash-welcome-title">Ready for your License Test?</h1>
+                <p class="welcome-sub" id="dash-welcome-sub">Learn Pakistani traffic signs, test your knowledge, and
+                    track your readiness.</p>
+            </div>
+
+            <div class="stats-overview-grid">
+                <div class="m3-stat-card">
+                    <span class="stat-num" id="stat-total-progress">0%</span>
+                    <span class="stat-label" id="dash-stat-progress-label">Overall Progress</span>
+                </div>
+                <div class="m3-stat-card">
+                    <span class="stat-num" id="stat-quiz-score">0/0</span>
+                    <span class="stat-label" id="dash-stat-score-label">Last Quiz Score</span>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <button class="m3-button-filled" data-target-tab="study" id="btn-dash-start-study">
+                    Start Learning
+                </button>
+                <button class="m3-button-tonal" id="btn-dash-rules-game">
+                    <svg class="m3-icon" style="width: 18px; height: 18px;">
+                        <use href="#icon-game"></use>
+                    </svg>
+                    <span id="btn-dash-rules-label">Traffic Rules Challenge</span>
+                </button>
+                <button class="m3-button-tonal" id="btn-dash-visualizer">
+                    <svg class="m3-icon" style="width: 18px; height: 18px;">
+                        <use href="#icon-road"></use>
+                    </svg>
+                    <span id="btn-dash-visualizer-label">Road Visualizer</span>
+                </button>
+                <button class="m3-button-tonal" data-target-tab="quiz" id="btn-dash-mock-test">
+                    Take Mock Test
+                </button>
+            </div>
+        </section>
+
+        <section id="view-study" class="app-view">
+            <div class="sticky-filter-wrapper">
+                <div class="m3-search-bar-row">
+                    <div class="m3-search-bar">
+                        <svg class="search-icon">
+                            <use href="#icon-search"></use>
+                        </svg>
+                        <input type="text" id="search-input" placeholder="Search signs...">
+                    </div>
+                    <div class="study-mode-controls">
+                        <button id="btn-toggle-view-mode" class="m3-icon-button" title="Switch Study Mode"
+                            aria-label="Toggle View Mode">
+                            <svg class="m3-icon" id="study-mode-icon">
+                                <use href="#icon-flashcards"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="m3-chip-set" id="category-chips">
+                    <button class="m3-chip active" data-category="all" id="chip-all">All</button>
+                    <button class="m3-chip" data-category="mandatory" id="chip-mandatory">Mandatory</button>
+                    <button class="m3-chip" data-category="warning" id="chip-warning">Warning</button>
+                    <button class="m3-chip" data-category="informative" id="chip-informative">Informatory</button>
+                    <button class="m3-chip" data-category="road_marking" id="chip-road-marking">Road Marking</button>
+                    <button class="m3-chip" data-category="weak" id="chip-weak">Need Practice</button>
+                </div>
+            </div>
+
+            <div class="sign-cards-grid" id="study-signs-container">
+            </div>
+
+            <div id="study-flashcards-container" class="hidden">
+                <div class="flashcard-deck">
+                    <div class="m3-card flashcard" id="flashcard-element" tabindex="0" role="button"
+                        aria-haspopup="true" aria-label="Flashcard. Tap space or enter to flip.">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div class="flashcard-image-box">
+                                    <img id="flashcard-img" src="" alt="Traffic Sign">
+                                </div>
+                                <div class="flashcard-front-hint">
+                                    <span id="flashcard-hint-text">Tap Card to Reveal Meaning</span>
+                                    <svg class="m3-icon">
+                                        <use href="#icon-rotate"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="flashcard-back-details">
+                                    <div class="flashcard-title" id="flashcard-text"></div>
+                                    <span class="m3-category-badge" id="flashcard-category"></span>
+                                </div>
+                                <div class="flashcard-back-actions">
+                                    <button class="m3-icon-button" id="flashcard-audio-btn"
+                                        aria-label="Play pronunciation audio">
+                                        <svg class="m3-icon">
+                                            <use href="#icon-volume"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="m3-icon-button" id="flashcard-bookmark-btn"
+                                        aria-label="Save this sign">
+                                        <svg class="m3-icon">
+                                            <use href="#icon-bookmark"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flashcard-navigation">
+                        <button class="m3-button-tonal" id="btn-flash-prev">Prev</button>
+                        <span id="flashcard-counter" class="flashcard-counter-label">1 of 1</span>
+                        <button class="m3-button-filled" id="btn-flash-next">Next</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-road-visualizer" class="app-view" aria-labelledby="visualizer-header-title">
+            <div class="view-header">
+                <button class="m3-icon-button" id="btn-visualizer-back" title="Back to Dashboard"
+                    aria-label="Go back to Dashboard">
+                    <svg class="m3-icon" style="transform: rotate(90deg);">
+                        <use href="#icon-translate"></use>
+                    </svg>
+                </button>
+                <h2 class="section-title" id="visualizer-header-title" style="margin: 0 0 0 8px;">Road Marking
+                    Visualizer</h2>
+            </div>
+            <p class="section-desc" id="visualizer-header-desc">Tap on any highlighted portion of the road to read the
+                official traffic rule.</p>
+
+            <div class="road-canvas-container">
+                <div class="virtual-road">
+                    <div class="road-edge edge-left"></div>
+                    <div class="road-edge edge-right"></div>
+
+                    <div class="interactive-road-mark marking-curb" data-rule="yellow-curb" tabindex="0" role="button"
+                        aria-label="Yellow Curb Line Information"></div>
+
+                    <div class="road-lane lane-left">
+                        <div class="interactive-road-mark marking-zebra" data-rule="zebra-crossing" tabindex="0"
+                            role="button" aria-label="Zebra Crossing Information">
+                            <div class="zebra-stripe"></div>
+                            <div class="zebra-stripe"></div>
+                            <div class="zebra-stripe"></div>
+                            <div class="zebra-stripe"></div>
+                            <div class="zebra-stripe"></div>
+                        </div>
+                    </div>
+
+                    <div class="center-line-area">
+                        <div class="interactive-road-mark marking-solid-line" data-rule="solid-line" tabindex="0"
+                            role="button" aria-label="Solid White Lane Divider Information"></div>
+                        <div class="interactive-road-mark marking-broken-line" data-rule="broken-line" tabindex="0"
+                            role="button" aria-label="Broken White Lane Divider Information"></div>
+                    </div>
+
+                    <!-- Right Lane -->
+                    <div class="road-lane lane-right">
+                        <!-- Yellow Box Junction Zone -->
+                        <div class="interactive-road-mark marking-box-junction" data-rule="box-junction" tabindex="0"
+                            role="button" aria-label="Yellow Box Junction Information">
+                            <div class="box-grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Rule Information Board -->
+            <div class="m3-card rule-info-card hidden" id="visualizer-info-board" aria-live="polite">
+                <div class="rule-info-header">
+                    <h3 id="visualizer-rule-title">Select a Road Area</h3>
+                    <button class="m3-icon-button" id="btn-close-visualizer-info" aria-label="Close information board">
+                        <svg class="m3-icon">
+                            <use href="#icon-close"></use>
+                        </svg>
+                    </button>
+                </div>
+                <p id="visualizer-rule-desc" class="rule-desc"></p>
+            </div>
+        </section>
+
+        <!-- Traffic Rules Game View -->
+        <section id="view-rules-game" class="app-view" aria-labelledby="game-title">
+            <div class="view-header">
+                <button class="m3-icon-button" id="btn-rules-game-back" title="Back to Dashboard"
+                    aria-label="Go back to Dashboard">
+                    <svg class="m3-icon" style="transform: rotate(90deg);">
+                        <use href="#icon-translate"></use>
+                    </svg>
+                </button>
+                <h2 class="section-title" id="game-title" style="margin: 0 0 0 8px;">Traffic Rules Challenge</h2>
+            </div>
+            <p class="section-desc" id="game-subtitle">Solve traffic scenarios to build safe road maneuvers and
+                coordination skills.</p>
+
+            <div id="game-active-container">
+                <div class="game-progress-header">
+                    <span id="game-question-counter">Scenario 1 of 5</span>
+                    <span id="game-score-counter">Score: 0</span>
+                </div>
+
+                <div class="game-visual-board m3-card">
+                    <div class="game-illustration-placeholder">
+                        <svg class="road-game-visual" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"
+                            id="game-graphics-canvas" aria-label="Visual scenario illustration representation">
+                            <!-- SVG graphics are dynamically generated inside index.js -->
+                        </svg>
+                    </div>
+                    <div class="game-scenario-textbox">
+                        <h3 id="game-scenario-question" class="question-instruction">Question details are loaded here.
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="quiz-options-container" id="game-options-grid">
+                </div>
+
+                <!-- Explanation / Verdict Feedback Card -->
+                <div class="m3-card rule-info-card hidden" id="game-explanation-board" style="margin-top: 16px;"
+                    aria-live="assertive">
+                    <div class="rule-info-header">
+                        <h3 id="game-verdict-title">Verdict</h3>
+                    </div>
+                    <p id="game-verdict-desc" class="rule-desc"></p>
+                    <button id="btn-game-next" class="m3-button-filled" style="width: 100%; margin-top: 12px;">
+                        Next Scenario
+                    </button>
+                </div>
+            </div>
+
+            <!-- Game Over / Final Results Page -->
+            <div id="game-results-container" class="hidden" aria-live="polite">
+                <div class="results-summary-card m3-card">
+                    <h2 class="result-title" id="game-results-status">Challenge Complete</h2>
+                    <div class="score-circle-wrapper">
+                        <div class="score-circle">
+                            <span id="game-percentage">0%</span>
+                            <span id="game-fraction-score">0 / 0</span>
+                        </div>
+                    </div>
+                    <p class="result-verdict" id="game-verdict-text">Keep practicing to improve your coordination and
+                        right-of-way concepts!</p>
+                    <div class="results-actions">
+                        <button id="btn-retry-game" class="m3-button-filled">Play Again</button>
+                        <button id="btn-exit-game" class="m3-button-tonal">Dashboard</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Configuration / Setup View -->
+        <section id="view-quiz-setup" class="app-view" aria-labelledby="quiz-setup-title">
+            <div class="quiz-setup-card m3-card">
+                <h2 class="section-title" id="quiz-setup-title">E-Sign Mock Test Setup</h2>
+                <p class="section-desc" id="quiz-setup-desc">Simulate the official computerized driving license exams.
+                </p>
+
+                <form id="quiz-config-form">
+                    <div class="form-group">
+                        <label class="m3-label" id="lbl-quiz-categories">Select Categories</label>
+                        <div class="checkbox-group">
+                            <label class="m3-checkbox-label">
+                                <input type="checkbox" name="quiz-cat" value="mandatory" checked>
+                                <span id="opt-cat-mandatory">Mandatory</span>
+                            </label>
+                            <label class="m3-checkbox-label">
+                                <input type="checkbox" name="quiz-cat" value="warning" checked>
+                                <span id="opt-cat-warning">Warning</span>
+                            </label>
+                            <label class="m3-checkbox-label">
+                                <input type="checkbox" name="quiz-cat" value="informative" checked>
+                                <span id="opt-cat-informative">Informatory</span>
+                            </label>
+                            <label class="m3-checkbox-label">
+                                <input type="checkbox" name="quiz-cat" value="road_marking" checked>
+                                <span id="opt-cat-marking">Road Marking</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="m3-label" id="lbl-quiz-length">Number of Questions</label>
+                        <div class="radio-group">
+                            <label class="m3-radio-label">
+                                <input type="radio" name="quiz-length" value="10" checked>
+                                <span id="opt-len-10">10 Signs</span>
+                            </label>
+                            <label class="m3-radio-label">
+                                <input type="radio" name="quiz-length" value="20">
+                                <span id="opt-len-20">20 Signs</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group border-top-group">
+                        <label class="m3-label" id="lbl-quiz-modes">License Exam Modes</label>
+                        <div class="checkbox-group">
+                            <label class="m3-checkbox-label">
+                                <input type="checkbox" id="quiz-strict-mode" name="quiz-strict">
+                                <div>
+                                    <span id="opt-mode-strict" style="font-weight: 700; display: block;">Strict DLIMS
+                                        Mode</span>
+                                    <span id="opt-mode-strict-sub" style="font-size: 11px; opacity: 0.8;">Failing any
+                                        Mandatory sign immediately fails the test.</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="radio-group" style="margin-top: 12px;">
+                            <label class="m3-radio-label">
+                                <input type="radio" name="quiz-feedback" value="practice" checked>
+                                <span id="opt-feedback-practice">Practice Mode (Instant Feedback)</span>
+                            </label>
+                            <label class="m3-radio-label">
+                                <input type="radio" name="quiz-feedback" value="exam">
+                                <span id="opt-feedback-exam">Exam Mode (Results at End Only)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="m3-button-filled start-quiz-btn" id="btn-start-mock-test">
+                        Start Mock Test
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Active Quiz View -->
+        <section id="view-quiz-active" class="app-view">
+            <div class="quiz-progress-header">
+                <span id="quiz-question-counter">Question 1 of 10</span>
+                <div class="timer-badge">
+                    <svg class="m3-icon">
+                        <use href="#icon-timer"></use>
+                    </svg>
+                    <span id="quiz-timer-text">45s</span>
+                </div>
+            </div>
+
+            <div class="m3-linear-progress">
+                <div class="progress-indicator" id="quiz-progress-bar" style="width: 10%;"></div>
+            </div>
+
+            <div class="quiz-question-card m3-card">
+                <div class="quiz-sign-frame">
+                    <img id="quiz-sign-image" src="" alt="Traffic Sign">
+                </div>
+                <h3 class="question-instruction" id="quiz-question-instruction">What does this sign mean?</h3>
+            </div>
+
+            <div class="quiz-options-container" id="quiz-options-grid">
+            </div>
+
+            <div class="quiz-action-container" style="margin-top: 16px;">
+                <button id="btn-quiz-next-question" class="m3-button-filled hidden" style="width: 100%;">
+                    Next Question
+                </button>
+            </div>
+        </section>
+
+        <!-- Quiz Results View -->
+        <section id="view-quiz-results" class="app-view" aria-live="polite">
+            <div class="results-summary-card m3-card">
+                <h2 class="result-title" id="result-status-message">Test Completed</h2>
+
+                <div class="score-circle-wrapper">
+                    <div class="score-circle">
+                        <span id="result-percentage">0%</span>
+                        <span id="result-fraction-score">0 / 0</span>
+                    </div>
+                </div>
+
+                <div class="result-breakdown-row">
+                    <div class="result-badge correct">
+                        <svg class="m3-icon">
+                            <use href="#icon-check"></use>
+                        </svg>
+                        <span id="result-correct-count">0 Correct</span>
+                    </div>
+                    <div class="result-badge incorrect">
+                        <svg class="m3-icon">
+                            <use href="#icon-close"></use>
+                        </svg>
+                        <span id="result-incorrect-count">0 Incorrect</span>
+                    </div>
+                </div>
+
+                <p class="result-verdict" id="result-verdict-text"></p>
+
+                <div class="results-actions">
+                    <button id="btn-retry-quiz" class="m3-button-filled">Retake Test</button>
+                    <button id="btn-back-to-home" class="m3-button-tonal">Dashboard</button>
+                </div>
+            </div>
+
+            <div class="detailed-review-section">
+                <h3 class="section-title" id="quiz-review-title">Review Answers</h3>
+                <div class="review-list" id="quiz-review-list">
+                </div>
+            </div>
+        </section>
+
+        <!-- Bookmarks View -->
+        <section id="view-bookmarks" class="app-view" aria-labelledby="bookmarks-title">
+            <h2 class="section-title" id="bookmarks-title">Saved Signs</h2>
+            <p class="section-desc" id="bookmarks-desc">Revise your starred signs for focused preparation.</p>
+
+            <div class="sign-cards-grid" id="bookmarks-container">
+            </div>
+
+            <div id="bookmarks-empty-state" class="empty-state">
+                <svg class="empty-state-icon">
+                    <use href="#icon-bookmark"></use>
+                </svg>
+                <p id="bookmarks-empty-text">No saved signs yet. Star signs in the study guide to show them here.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <span>© <span id="year">2026</span> GGCOkara. All rights reserved. By <a href="http://Pro-Bandey.github.io"
+                target="_blank" rel="noopener">Pro Bandey</a> &bull; <a href="https://mramzanch.blogspot.com"
+                target="_blank" rel="noopener">M Ramzan Ch</a></span>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
