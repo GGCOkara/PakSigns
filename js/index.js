@@ -21,10 +21,13 @@ const state = {
 
   // Study Panel State
   studyMode: 'grid', // 'grid' or 'flashcards'
+  searchTimeout: null,
   flashcard: {
     pool: [],
     currentIndex: 0,
-    isFlipped: false
+    isFlipped: false,
+    touchStartX: 0,
+    touchEndX: 0
   },
 
   // Quiz Session State
@@ -60,7 +63,7 @@ const translations = {
     "dash-stat-score-label": "Last Quiz Score",
     "btn-dash-start-study": "Start Learning",
     "btn-dash-rules-label": "Traffic Rules Challenge",
-    "btn-dash-visualizer-label": "Interactive Road Visualizer",
+    "btn-dash-visualizer-label": "Road Visualizer",
     "btn-dash-mock-test": "Take Mock Test",
     "search-input-placeholder": "Search signs...",
     "chip-all": "All",
@@ -213,13 +216,25 @@ const roadRules = {
   }
 };
 
+// Speech Synthesis Voices Cache
+let voices = [];
+function loadVoices() {
+  if ('speechSynthesis' in window) {
+    voices = window.speechSynthesis.getVoices();
+  }
+}
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+  loadVoices();
+}
+
 // Fallback sign and scenario catalogs
 const fallbackSigns = [
-  { "id": 1, "category": "mandatory", "img": "1.png", "ur": "ٹریکٹر کا داخلہ ممنوع ہے", "en": "Tractors are not allowed to enter" },
-  { "id": 2, "category": "warning", "img": "2.png", "ur": "دہری سڑک ختم ہے", "en": "The dual road ends" },
-  { "id": 3, "category": "mandatory", "img": "3.png", "ur": "حد رفتار 30 کلومیٹر فی گھنٹہ ہے", "en": "Speed limit is 30 km/h" },
-  { "id": 4, "category": "mandatory", "img": "4.png", "ur": "موٹر سائیکلوں کا داخلہ ممنوع ہے", "en": "Entry for motorcycles is prohibited" },
-  { "id": 5, "category": "mandatory", "img": "5.png", "ur": "بائیں مڑ جائیں", "en": "Turn left" }
+  { "id": 1, "category": "mandatory", "img": "compulsory/Compulsory_Sign.png", "ur": "ٹریکٹر کا داخلہ ممنوع ہے", "en": "Tractors are not allowed to enter" },
+  { "id": 2, "category": "warning", "img": "warning/Precautionary_Sign.png", "ur": "دہری سڑک ختم ہے", "en": "The dual road ends" },
+  { "id": 3, "category": "mandatory", "img": "compulsory/Speed_Limit.png", "ur": "حد رفتار 30 کلومیٹر فی گھنٹہ ہے", "en": "Speed limit is 30 km/h" },
+  { "id": 4, "category": "mandatory", "img": "compulsory/Motorcycle_Entry_Is_Prohibited.png", "ur": "موٹر سائیکلوں کا داخلہ ممنوع ہے", "en": "Entry for motorcycles is prohibited" },
+  { "id": 5, "category": "mandatory", "img": "compulsory/Turn_Left.png", "ur": "بائیں مڑ جائیں", "en": "Turn left" }
 ];
 
 const fallbackScenarios = [
@@ -245,9 +260,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   loadStats();
   setupEventListeners();
 
-  await fetchAppDatabase();
+  await fetchAppDatabase(); // Await database completion before languages or view calculations
   initializeLanguage();
-  updateDashboardStats(); if ('serviceWorker' in navigator) {
+  updateDashboardStats();
+
+  // Initialize Hash-based Routing Engine
+  window.addEventListener('hashchange', handleRouting);
+  handleRouting();
+
+  if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js')
         .then((reg) => console.log('Service Worker registered successfully with scope:', reg.scope))
@@ -255,7 +276,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 });
-
 
 /**
  * Fetch sign database and scenarios. Safely checks root and subdirectory paths.
@@ -335,7 +355,7 @@ function setLanguageMode(mode) {
     });
   }
 
-  // Update layout of the currently active view
+  // Update layouts depending on current view context
   if (state.currentView === 'study') {
     renderStudySigns();
   } else if (state.currentView === 'bookmarks') {
@@ -351,23 +371,59 @@ function toggleLanguageMode() {
 }
 
 // ==========================================================================
-// 3. Routing & View Switch Controllers
+// 3. Routing & View Switch Controllers (URL Router Guard)
 // ==========================================================================
 
-function switchView(viewId) {
+function handleRouting() {
+  const hash = window.location.hash.replace('#', '') || 'dashboard';
+  const validViews = ['dashboard', 'study', 'quiz', 'bookmarks', 'road-visualizer', 'rules-game'];
+
+  if (validViews.includes(hash)) {
+    if (state.currentView === hash) return;
+    switchView(hash, false);
+  } else {
+    switchView('dashboard', true);
+  }
+}
+
+function switchView(viewId, updateHash = true) {
+  // Exit guard checks for active simulations
   if (state.quiz.active && viewId !== 'quiz') {
-    const confirmLeave = confirm("Are you sure you want to exit the test? Progress will be lost.");
-    if (!confirmLeave) return;
+    const confirmLeave = confirm(state.languageMode === 'urdu' 
+      ? "کیا آپ واقعی ٹیسٹ چھوڑنا چاہتے ہیں؟ آپ کا حاصل کردہ ریکارڈ ختم ہو جائے گا۔"
+      : "Are you sure you want to exit the test? Progress will be lost.");
+    if (!confirmLeave) {
+      // Revert URL hash state if the transition is canceled without triggers
+      window.removeEventListener('hashchange', handleRouting);
+      window.location.hash = '#quiz';
+      setTimeout(() => {
+        window.addEventListener('hashchange', handleRouting);
+      }, 50);
+      return;
+    }
     resetQuizState();
   }
 
   if (state.game.active && viewId !== 'rules-game') {
-    const confirmLeave = confirm("Are you sure you want to leave the rules challenge?");
-    if (!confirmLeave) return;
+    const confirmLeave = confirm(state.languageMode === 'urdu'
+      ? "کیا آپ واقعی ٹریفک چیلنج چھوڑنا چاہتے ہیں؟"
+      : "Are you sure you want to leave the rules challenge?");
+    if (!confirmLeave) {
+      window.removeEventListener('hashchange', handleRouting);
+      window.location.hash = '#rules-game';
+      setTimeout(() => {
+        window.addEventListener('hashchange', handleRouting);
+      }, 50);
+      return;
+    }
     state.game.active = false;
   }
 
   state.currentView = viewId;
+
+  if (updateHash) {
+    window.location.hash = '#' + viewId;
+  }
 
   document.querySelectorAll('.app-view').forEach(view => view.classList.remove('active'));
 
@@ -382,7 +438,13 @@ function switchView(viewId) {
   if (targetView) targetView.classList.add('active');
 
   document.querySelectorAll('.nav-item').forEach(item => {
-    item.classList.toggle('active', item.dataset.tab === viewId);
+    const isActive = item.getAttribute('href') === `#${viewId}`;
+    item.classList.toggle('active', isActive);
+    if (isActive) {
+      item.setAttribute('aria-current', 'page');
+    } else {
+      item.removeAttribute('aria-current');
+    }
   });
 
   if (viewId === 'dashboard') {
@@ -483,7 +545,7 @@ function renderStudySigns() {
 }
 
 /**
- * Speech Synthesis wrapper with local voice language lookup fail-safes
+ * Speech Synthesis with Voice Cache Support
  */
 function speakSignText(sign) {
   if ('speechSynthesis' in window) {
@@ -492,16 +554,13 @@ function speakSignText(sign) {
     const text = state.languageMode === 'urdu' ? sign.ur : sign.en;
     const utterance = new SpeechSynthesisUtterance(text);
 
-    // Dynamic locale voice lookup
-    const voices = window.speechSynthesis.getVoices();
     let preferredVoice = null;
-
     if (state.languageMode === 'urdu') {
       utterance.lang = 'ur-PK';
       preferredVoice = voices.find(v => v.lang.startsWith('ur') || v.lang.startsWith('pa'));
     } else {
       utterance.lang = 'en-US';
-      preferredVoice = voices.find(v => v.lang.startsWith('en'));
+      preferredVoice = voices.find(v => v.lang.startsWith('en') || v.lang.startsWith('en-US'));
     }
 
     if (preferredVoice) utterance.voice = preferredVoice;
@@ -627,7 +686,7 @@ function renderBookmarks() {
   }
 
   container.classList.remove('hidden');
-  emptyState.add('hidden');
+  emptyState.classList.add('hidden');
   container.innerHTML = '';
 
   savedSigns.forEach(sign => {
@@ -718,9 +777,6 @@ function startRulesGame() {
   renderGameScenario();
 }
 
-/**
- * Draws dynamic vector road scenes inside scenario SVGs
- */
 function drawScenarioVisuals(scenarioId, canvas) {
   canvas.innerHTML = '';
 
@@ -741,7 +797,7 @@ function drawScenarioVisuals(scenarioId, canvas) {
       <text x="115" y="36" fill="#ffffff" font-size="6" font-weight="bold">A</text>
       <rect x="93" y="102" width="14" height="8" rx="2" fill="#3498db" transform="rotate(-90 93 102)" />
       <text x="96" y="105" fill="#ffffff" font-size="6" font-weight="bold">B</text>
-      <path d="M125 50 A 30 30 0 0 1 100 90" fill="none" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="2,2" />
+      <path d="M125 50 A 30 30 0 0 1 100 90" fill="none" stroke="#2ecc71" stroke-width="2" stroke-dasharray="2,2" />
     `;
   } else if (scenarioId === 2) {
     canvas.innerHTML = `
@@ -923,7 +979,7 @@ function startQuiz(categories, length, strictMode, feedbackMode) {
   eligiblePool = shuffleArray(eligiblePool);
   state.quiz.pool = eligiblePool.slice(0, Math.min(length, eligiblePool.length));
 
-  // Preload asset images to improve mobile network caching speed
+  // Preload asset images to prevent visual flicker on layout transition
   preloadSignImages(state.quiz.pool);
 
   state.quiz.active = true;
@@ -938,9 +994,6 @@ function startQuiz(categories, length, strictMode, feedbackMode) {
   loadQuestion();
 }
 
-/**
- * Utility to cache asset images into client memory pre-actively
- */
 function preloadSignImages(signsArray) {
   signsArray.forEach(sign => {
     const img = new Image();
@@ -963,6 +1016,7 @@ function loadQuestion() {
   document.getElementById('quiz-progress-bar').style.width = `${((state.quiz.currentIndex + 1) / total) * 100}%`;
   document.getElementById('quiz-sign-image').src = `assets/${currentSign.img}`;
 
+  // Generate plausible dynamic distractors from the same category
   let sameCategoryDistractors = state.signs.filter(s => s.id !== currentSign.id && s.category === currentSign.category);
   if (sameCategoryDistractors.length < 3) {
     sameCategoryDistractors = state.signs.filter(s => s.id !== currentSign.id);
@@ -1027,12 +1081,24 @@ function handleOptionSelected(buttonElement, chosenSign, correctSign) {
 
     const nextBtn = document.getElementById('btn-quiz-next-question');
     if (nextBtn) nextBtn.classList.remove('hidden');
+
+    // DLIMS Strict Mode rule check: Instantly route to results on Mandatory mistake in practice
+    if (state.quiz.failedDueToStrict) {
+      nextBtn.innerText = state.languageMode === 'urdu' ? "نتیجہ دیکھیں (امتحان ختم)" : "View Results (Exam Terminated)";
+    } else {
+      nextBtn.innerText = state.languageMode === 'urdu' ? "اگلا سوال" : "Next Question";
+    }
   } else {
+    // Exam mode triggers
     allButtons.forEach(btn => btn.disabled = true);
     buttonElement.style.border = "2px solid var(--primary)";
 
     setTimeout(() => {
-      goToNextQuestion();
+      if (state.quiz.strictMode && state.quiz.failedDueToStrict) {
+        finishQuiz(); // Exit instantly in exam mode
+      } else {
+        goToNextQuestion();
+      }
     }, 600);
   }
 }
@@ -1061,15 +1127,31 @@ function handleTimeout() {
     const alertMsg = state.languageMode === 'urdu' ? "اس سوال کے لیے وقت ختم ہو گیا ہے!" : "Time is up for this question!";
     alert(alertMsg);
     const nextBtn = document.getElementById('btn-quiz-next-question');
-    if (nextBtn) nextBtn.classList.remove('hidden');
+    if (nextBtn) {
+      nextBtn.classList.remove('hidden');
+      if (state.quiz.failedDueToStrict) {
+        nextBtn.innerText = state.languageMode === 'urdu' ? "نتیجہ دیکھیں (امتحان ختم)" : "View Results (Exam Terminated)";
+      } else {
+        nextBtn.innerText = state.languageMode === 'urdu' ? "اگلا سوال" : "Next Question";
+      }
+    }
   } else {
     setTimeout(() => {
-      goToNextQuestion();
+      if (state.quiz.strictMode && state.quiz.failedDueToStrict) {
+        finishQuiz();
+      } else {
+        goToNextQuestion();
+      }
     }, 600);
   }
 }
 
 function goToNextQuestion() {
+  if (state.quiz.strictMode && state.quiz.failedDueToStrict) {
+    finishQuiz();
+    return;
+  }
+
   state.quiz.currentIndex++;
   if (state.quiz.currentIndex < state.quiz.pool.length) {
     loadQuestion();
@@ -1230,7 +1312,7 @@ function recordWeakSign(id) {
 }
 
 // ==========================================================================
-// 10. Event Binding & DOM Utility Hooks (Optimized Delegation)
+// 10. Event Binding & DOM Utility Hooks
 // ==========================================================================
 
 function setupEventListeners() {
@@ -1264,9 +1346,12 @@ function setupEventListeners() {
     document.getElementById('language-onboarding-modal').classList.add('hidden');
   });
 
+  // Native Link Anchor event captures
   document.querySelectorAll('.nav-item').forEach(item => {
-    item.addEventListener('click', () => {
-      switchView(item.dataset.tab);
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetHash = item.getAttribute('href');
+      window.location.hash = targetHash;
     });
   });
 
@@ -1279,14 +1364,20 @@ function setupEventListeners() {
   document.getElementById('btn-language-toggle').addEventListener('click', toggleLanguageMode);
   document.getElementById('btn-theme-toggle').addEventListener('click', toggleTheme);
 
+  // Debounced search on typing
   const searchQueryInput = document.getElementById('search-input');
   if (searchQueryInput) {
-    searchQueryInput.addEventListener('input', renderStudySigns);
+    searchQueryInput.addEventListener('input', () => {
+      clearTimeout(state.searchTimeout);
+      state.searchTimeout = setTimeout(() => {
+        renderStudySigns();
+      }, 200);
+    });
   }
 
   document.getElementById('btn-toggle-view-mode').addEventListener('click', toggleStudyMode);
 
-  // Accessible Flashcard Interaction via Click and Key Press (Enter/Space)
+  // Accessible Flashcard Interaction via Touch Swipe, Tap, or Space/Enter keys
   const cardElement = document.getElementById('flashcard-element');
   if (cardElement) {
     const flipCard = () => {
@@ -1300,6 +1391,28 @@ function setupEventListeners() {
         flipCard();
       }
     });
+
+    // Touch events for swiping flashcards on mobile
+    cardElement.addEventListener('touchstart', (e) => {
+      state.flashcard.touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    cardElement.addEventListener('touchend', (e) => {
+      state.flashcard.touchEndX = e.changedTouches[0].screenX;
+      handleSwipeGesture();
+    }, { passive: true });
+  }
+
+  function handleSwipeGesture() {
+    const threshold = 50; // Minimum swipe distance in pixels
+    const deltaX = state.flashcard.touchEndX - state.flashcard.touchStartX;
+    if (Math.abs(deltaX) > threshold) {
+      if (deltaX > 0) {
+        handleFlashcardNavigation('prev'); // Swipe Right
+      } else {
+        handleFlashcardNavigation('next'); // Swipe Left
+      }
+    }
   }
 
   document.getElementById('btn-flash-prev').addEventListener('click', (e) => {
@@ -1324,8 +1437,12 @@ function setupEventListeners() {
     toggleBookmark(sign.id);
   });
 
-  document.getElementById('btn-dash-visualizer').addEventListener('click', openRoadVisualizer);
-  document.getElementById('btn-visualizer-back').addEventListener('click', () => {
+  document.getElementById('btn-dash-visualizer').addEventListener('click', (e) => {
+    e.preventDefault();
+    openRoadVisualizer();
+  });
+  document.getElementById('btn-visualizer-back').addEventListener('click', (e) => {
+    e.preventDefault();
     switchView('dashboard');
   });
 
@@ -1343,8 +1460,12 @@ function setupEventListeners() {
 
   document.getElementById('btn-close-visualizer-info').addEventListener('click', closeVisualizerInfo);
 
-  document.getElementById('btn-dash-rules-game').addEventListener('click', startRulesGame);
-  document.getElementById('btn-rules-game-back').addEventListener('click', () => {
+  document.getElementById('btn-dash-rules-game').addEventListener('click', (e) => {
+    e.preventDefault();
+    startRulesGame();
+  });
+  document.getElementById('btn-rules-game-back').addEventListener('click', (e) => {
+    e.preventDefault();
     switchView('dashboard');
   });
   document.getElementById('btn-game-next').addEventListener('click', advanceGame);

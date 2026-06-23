@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
     <meta name="description"
         content="Prepare for the official Pakistani computerized driving license e-sign test. Learn road markings, traffic signs, and right-of-way rules with interactive visualizers and mock exams.">
@@ -51,8 +51,9 @@
 </head>
 
 <body class="m3-theme-light">
+    <!-- Language Onboarding Modal -->
     <div id="language-onboarding-modal" class="modal-overlay hidden" role="dialog"
-        aria-labelledby="onboarding-welcome-title" aria-describedby="onboarding-welcome-desc">
+        aria-modal="true" aria-labelledby="onboarding-welcome-title" aria-describedby="onboarding-welcome-desc">
         <div class="m3-card onboarding-card">
             <h2 id="onboarding-welcome-title">Welcome to PakSigns</h2>
             <p id="onboarding-welcome-desc">Please choose your preferred driving learning language.</p>
@@ -63,11 +64,12 @@
         </div>
     </div>
 
-    <div id="info-sidebar-overlay" class="sidebar-overlay hidden"></div>
-    <aside id="info-sidebar" class="m3-sidebar-drawer" role="complementary" aria-label="App Information">
+    <!-- Info Sidebar -->
+    <div id="info-sidebar-overlay" class="sidebar-overlay hidden" aria-hidden="true"></div>
+    <aside id="info-sidebar" class="m3-sidebar-drawer" role="dialog" aria-modal="true" aria-label="App Information">
         <div class="sidebar-header">
             <div class="sidebar-brand">
-                <svg class="sidebar-brand-icon">
+                <svg class="sidebar-brand-icon" aria-hidden="true">
                     <use href="#icon-info"></use>
                 </svg>
                 <div>
@@ -76,7 +78,7 @@
                 </div>
             </div>
             <button id="btn-close-sidebar" class="m3-icon-button" aria-label="Close Info Sidebar">
-                <svg class="m3-icon">
+                <svg class="m3-icon" aria-hidden="true">
                     <use href="#icon-close"></use>
                 </svg>
             </button>
@@ -117,6 +119,8 @@
             </div>
         </div>
     </aside>
+
+    <!-- Global SVG Icons Register -->
     <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
         <symbol id="icon-book" viewBox="0 0 24 24">
             <path
@@ -200,6 +204,9 @@
             <line x1="12" y1="16" x2="12" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
             <line x1="12" y1="8" x2="12.01" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </symbol>
+        <symbol id="icon-arrow-back" viewBox="0 0 24 24">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="currentColor"/>
+        </symbol>
     </svg>
 
     <header class="m3-top-app-bar-wrapper">
@@ -210,18 +217,18 @@
             <div class="app-bar-actions">
                 <button id="btn-info-toggle" class="m3-icon-button" title="App Information"
                     aria-label="Toggle Info Drawer">
-                    <svg class="m3-icon">
+                    <svg class="m3-icon" aria-hidden="true">
                         <use href="#icon-info"></use>
                     </svg>
                 </button>
                 <button id="btn-language-toggle" class="m3-icon-button" title="Switch Language"
                     aria-label="Toggle Language">
-                    <svg class="m3-icon">
+                    <svg class="m3-icon" aria-hidden="true">
                         <use href="#icon-translate"></use>
                     </svg>
                 </button>
                 <button id="btn-theme-toggle" class="m3-icon-button" title="Toggle Theme" aria-label="Toggle Dark Mode">
-                    <svg class="m3-icon">
+                    <svg class="m3-icon" aria-hidden="true">
                         <use href="#icon-theme"></use>
                     </svg>
                 </button>
@@ -229,42 +236,43 @@
         </div>
 
         <nav class="m3-navigation-bar top-nav" role="navigation" aria-label="Primary Navigation">
-            <button class="nav-item active" data-tab="dashboard">
+            <a href="#dashboard" class="nav-item active" data-tab="dashboard" aria-current="page">
                 <div class="nav-icon-container">
-                    <svg class="nav-icon">
+                    <svg class="nav-icon" aria-hidden="true">
                         <use href="#icon-progress"></use>
                     </svg>
                 </div>
                 <span class="nav-label" id="nav-label-home">Home</span>
-            </button>
-            <button class="nav-item" data-tab="study">
+            </a>
+            <a href="#study" class="nav-item" data-tab="study">
                 <div class="nav-icon-container">
-                    <svg class="nav-icon">
+                    <svg class="nav-icon" aria-hidden="true">
                         <use href="#icon-book"></use>
                     </svg>
                 </div>
                 <span class="nav-label" id="nav-label-study">Study</span>
-            </button>
-            <button class="nav-item" data-tab="quiz">
+            </a>
+            <a href="#quiz" class="nav-item" data-tab="quiz">
                 <div class="nav-icon-container">
-                    <svg class="nav-icon">
+                    <svg class="nav-icon" aria-hidden="true">
                         <use href="#icon-quiz"></use>
                     </svg>
                 </div>
                 <span class="nav-label" id="nav-label-test">Test</span>
-            </button>
-            <button class="nav-item" data-tab="bookmarks">
+            </a>
+            <a href="#bookmarks" class="nav-item" data-tab="bookmarks">
                 <div class="nav-icon-container">
-                    <svg class="nav-icon">
+                    <svg class="nav-icon" aria-hidden="true">
                         <use href="#icon-bookmark"></use>
                     </svg>
                 </div>
                 <span class="nav-label" id="nav-label-saved">Saved</span>
-            </button>
+            </a>
         </nav>
     </header>
 
-    <main class="m3-container">
+    <main class="m3-container" id="main-content">
+        <!-- Dashboard / Welcome Screen -->
         <section id="view-dashboard" class="app-view active" aria-labelledby="dash-welcome-title">
             <div class="dashboard-hero">
                 <h1 class="welcome-heading" id="dash-welcome-title">Ready for your License Test?</h1>
@@ -284,47 +292,49 @@
             </div>
 
             <div class="quick-actions">
-                <button class="m3-button-filled" data-target-tab="study" id="btn-dash-start-study">
+                <a href="#study" class="m3-button-filled" id="btn-dash-start-study">
                     Start Learning
-                </button>
-                <button class="m3-button-tonal" id="btn-dash-rules-game">
-                    <svg class="m3-icon" style="width: 18px; height: 18px;">
+                </a>
+                <a href="#rules-game" class="m3-button-tonal" id="btn-dash-rules-game">
+                    <svg class="m3-icon" style="width: 18px; height: 18px;" aria-hidden="true">
                         <use href="#icon-game"></use>
                     </svg>
                     <span id="btn-dash-rules-label">Traffic Rules Challenge</span>
-                </button>
-                <button class="m3-button-tonal" id="btn-dash-visualizer">
-                    <svg class="m3-icon" style="width: 18px; height: 18px;">
+                </a>
+                <a href="#road-visualizer" class="m3-button-tonal" id="btn-dash-visualizer">
+                    <svg class="m3-icon" style="width: 18px; height: 18px;" aria-hidden="true">
                         <use href="#icon-road"></use>
                     </svg>
                     <span id="btn-dash-visualizer-label">Road Visualizer</span>
-                </button>
-                <button class="m3-button-tonal" data-target-tab="quiz" id="btn-dash-mock-test">
+                </a>
+                <a href="#quiz" class="m3-button-tonal" id="btn-dash-mock-test">
                     Take Mock Test
-                </button>
+                </a>
             </div>
         </section>
 
-        <section id="view-study" class="app-view">
+        <!-- Study Screen -->
+        <section id="view-study" class="app-view" aria-labelledby="study-heading-title">
+            <h1 class="hidden" id="study-heading-title">Traffic Sign Directory Study Guide</h1>
             <div class="sticky-filter-wrapper">
                 <div class="m3-search-bar-row">
                     <div class="m3-search-bar">
-                        <svg class="search-icon">
+                        <svg class="search-icon" aria-hidden="true">
                             <use href="#icon-search"></use>
                         </svg>
-                        <input type="text" id="search-input" placeholder="Search signs...">
+                        <input type="text" id="search-input" placeholder="Search signs..." aria-label="Search traffic signs">
                     </div>
                     <div class="study-mode-controls">
                         <button id="btn-toggle-view-mode" class="m3-icon-button" title="Switch Study Mode"
-                            aria-label="Toggle View Mode">
-                            <svg class="m3-icon" id="study-mode-icon">
+                            aria-label="Toggle Flashcard View Mode">
+                            <svg class="m3-icon" id="study-mode-icon" aria-hidden="true">
                                 <use href="#icon-flashcards"></use>
                             </svg>
                         </button>
                     </div>
                 </div>
 
-                <div class="m3-chip-set" id="category-chips">
+                <div class="m3-chip-set" id="category-chips" role="group" aria-label="Filter Traffic Signs by Category">
                     <button class="m3-chip active" data-category="all" id="chip-all">All</button>
                     <button class="m3-chip" data-category="mandatory" id="chip-mandatory">Mandatory</button>
                     <button class="m3-chip" data-category="warning" id="chip-warning">Warning</button>
@@ -344,11 +354,11 @@
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
                                 <div class="flashcard-image-box">
-                                    <img id="flashcard-img" src="" alt="Traffic Sign">
+                                    <img id="flashcard-img" src="" alt="Traffic Sign Card Illustration">
                                 </div>
                                 <div class="flashcard-front-hint">
                                     <span id="flashcard-hint-text">Tap Card to Reveal Meaning</span>
-                                    <svg class="m3-icon">
+                                    <svg class="m3-icon" aria-hidden="true">
                                         <use href="#icon-rotate"></use>
                                     </svg>
                                 </div>
@@ -361,13 +371,13 @@
                                 <div class="flashcard-back-actions">
                                     <button class="m3-icon-button" id="flashcard-audio-btn"
                                         aria-label="Play pronunciation audio">
-                                        <svg class="m3-icon">
+                                        <svg class="m3-icon" aria-hidden="true">
                                             <use href="#icon-volume"></use>
                                         </svg>
                                     </button>
                                     <button class="m3-icon-button" id="flashcard-bookmark-btn"
                                         aria-label="Save this sign">
-                                        <svg class="m3-icon">
+                                        <svg class="m3-icon" aria-hidden="true">
                                             <use href="#icon-bookmark"></use>
                                         </svg>
                                     </button>
@@ -384,14 +394,15 @@
             </div>
         </section>
 
+        <!-- Road Visualizer Screen -->
         <section id="view-road-visualizer" class="app-view" aria-labelledby="visualizer-header-title">
             <div class="view-header">
-                <button class="m3-icon-button" id="btn-visualizer-back" title="Back to Dashboard"
+                <a href="#dashboard" class="m3-icon-button" id="btn-visualizer-back" title="Back to Dashboard"
                     aria-label="Go back to Dashboard">
-                    <svg class="m3-icon" style="transform: rotate(90deg);">
-                        <use href="#icon-translate"></use>
+                    <svg class="m3-icon" aria-hidden="true">
+                        <use href="#icon-arrow-back"></use>
                     </svg>
-                </button>
+                </a>
                 <h2 class="section-title" id="visualizer-header-title" style="margin: 0 0 0 8px;">Road Marking
                     Visualizer</h2>
             </div>
@@ -440,7 +451,7 @@
                 <div class="rule-info-header">
                     <h3 id="visualizer-rule-title">Select a Road Area</h3>
                     <button class="m3-icon-button" id="btn-close-visualizer-info" aria-label="Close information board">
-                        <svg class="m3-icon">
+                        <svg class="m3-icon" aria-hidden="true">
                             <use href="#icon-close"></use>
                         </svg>
                     </button>
@@ -452,12 +463,12 @@
         <!-- Traffic Rules Game View -->
         <section id="view-rules-game" class="app-view" aria-labelledby="game-title">
             <div class="view-header">
-                <button class="m3-icon-button" id="btn-rules-game-back" title="Back to Dashboard"
+                <a href="#dashboard" class="m3-icon-button" id="btn-rules-game-back" title="Back to Dashboard"
                     aria-label="Go back to Dashboard">
-                    <svg class="m3-icon" style="transform: rotate(90deg);">
-                        <use href="#icon-translate"></use>
+                    <svg class="m3-icon" aria-hidden="true">
+                        <use href="#icon-arrow-back"></use>
                     </svg>
-                </button>
+                </a>
                 <h2 class="section-title" id="game-title" style="margin: 0 0 0 8px;">Traffic Rules Challenge</h2>
             </div>
             <p class="section-desc" id="game-subtitle">Solve traffic scenarios to build safe road maneuvers and
@@ -473,7 +484,7 @@
                     <div class="game-illustration-placeholder">
                         <svg class="road-game-visual" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"
                             id="game-graphics-canvas" aria-label="Visual scenario illustration representation">
-                            <!-- SVG graphics are dynamically generated inside index.js -->
+                            <!-- SVG graphics dynamically generated inside index.js -->
                         </svg>
                     </div>
                     <div class="game-scenario-textbox">
@@ -527,8 +538,8 @@
 
                 <form id="quiz-config-form">
                     <div class="form-group">
-                        <label class="m3-label" id="lbl-quiz-categories">Select Categories</label>
-                        <div class="checkbox-group">
+                        <span class="m3-label" id="lbl-quiz-categories">Select Categories</span>
+                        <div class="checkbox-group" role="group" aria-labelledby="lbl-quiz-categories">
                             <label class="m3-checkbox-label">
                                 <input type="checkbox" name="quiz-cat" value="mandatory" checked>
                                 <span id="opt-cat-mandatory">Mandatory</span>
@@ -549,8 +560,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="m3-label" id="lbl-quiz-length">Number of Questions</label>
-                        <div class="radio-group">
+                        <span class="m3-label" id="lbl-quiz-length">Number of Questions</span>
+                        <div class="radio-group" role="radiogroup" aria-labelledby="lbl-quiz-length">
                             <label class="m3-radio-label">
                                 <input type="radio" name="quiz-length" value="10" checked>
                                 <span id="opt-len-10">10 Signs</span>
@@ -563,7 +574,7 @@
                     </div>
 
                     <div class="form-group border-top-group">
-                        <label class="m3-label" id="lbl-quiz-modes">License Exam Modes</label>
+                        <span class="m3-label" id="lbl-quiz-modes">License Exam Modes</span>
                         <div class="checkbox-group">
                             <label class="m3-checkbox-label">
                                 <input type="checkbox" id="quiz-strict-mode" name="quiz-strict">
@@ -575,7 +586,7 @@
                                 </div>
                             </label>
                         </div>
-                        <div class="radio-group" style="margin-top: 12px;">
+                        <div class="radio-group" style="margin-top: 12px;" role="radiogroup" aria-label="Exam Feedback Settings">
                             <label class="m3-radio-label">
                                 <input type="radio" name="quiz-feedback" value="practice" checked>
                                 <span id="opt-feedback-practice">Practice Mode (Instant Feedback)</span>
@@ -595,29 +606,29 @@
         </section>
 
         <!-- Active Quiz View -->
-        <section id="view-quiz-active" class="app-view">
+        <section id="view-quiz-active" class="app-view" aria-label="Active Mock Exam Session">
             <div class="quiz-progress-header">
                 <span id="quiz-question-counter">Question 1 of 10</span>
                 <div class="timer-badge">
-                    <svg class="m3-icon">
+                    <svg class="m3-icon" aria-hidden="true">
                         <use href="#icon-timer"></use>
                     </svg>
                     <span id="quiz-timer-text">45s</span>
                 </div>
             </div>
 
-            <div class="m3-linear-progress">
+            <div class="m3-linear-progress" role="progressbar" aria-label="Quiz completion indicator" aria-valuemin="0" aria-valuemax="100">
                 <div class="progress-indicator" id="quiz-progress-bar" style="width: 10%;"></div>
             </div>
 
             <div class="quiz-question-card m3-card">
                 <div class="quiz-sign-frame">
-                    <img id="quiz-sign-image" src="" alt="Traffic Sign">
+                    <img id="quiz-sign-image" src="" alt="Traffic sign to identify">
                 </div>
                 <h3 class="question-instruction" id="quiz-question-instruction">What does this sign mean?</h3>
             </div>
 
-            <div class="quiz-options-container" id="quiz-options-grid">
+            <div class="quiz-options-container" id="quiz-options-grid" role="group" aria-label="Question Multiple Choice Options">
             </div>
 
             <div class="quiz-action-container" style="margin-top: 16px;">
@@ -641,13 +652,13 @@
 
                 <div class="result-breakdown-row">
                     <div class="result-badge correct">
-                        <svg class="m3-icon">
+                        <svg class="m3-icon" aria-hidden="true">
                             <use href="#icon-check"></use>
                         </svg>
                         <span id="result-correct-count">0 Correct</span>
                     </div>
                     <div class="result-badge incorrect">
-                        <svg class="m3-icon">
+                        <svg class="m3-icon" aria-hidden="true">
                             <use href="#icon-close"></use>
                         </svg>
                         <span id="result-incorrect-count">0 Incorrect</span>
@@ -678,7 +689,7 @@
             </div>
 
             <div id="bookmarks-empty-state" class="empty-state">
-                <svg class="empty-state-icon">
+                <svg class="empty-state-icon" aria-hidden="true">
                     <use href="#icon-bookmark"></use>
                 </svg>
                 <p id="bookmarks-empty-text">No saved signs yet. Star signs in the study guide to show them here.</p>
