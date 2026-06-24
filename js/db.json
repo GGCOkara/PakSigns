@@ -563,7 +563,7 @@
     {
       "id": 71,
       "category": "informative",
-      "img": "informative/The_Road_Leading_To_The_Left_Is_Closed.",
+      "img": "informative/The_Road_Leading_To_The_Left_Is_Closed.png",
       "ur": "بائیں طرف جانے والی سڑک بند ہے",
       "en": "Left Side Road Is Closed",
       "desc": "Indicates that the branch or side street exiting to your left is closed or blocked."
@@ -571,7 +571,7 @@
     {
       "id": 72,
       "category": "informative",
-      "img": "informative/The_Road_Leading_To_The_Right_Is_Closed.",
+      "img": "informative/The_Road_Leading_To_The_Right_Is_Closed.png",
       "ur": "دائیں طرف جانے والی سڑک بند ہے",
       "en": "Right Side Road Is Closed",
       "desc": "Indicates that the branch or side street exiting to your right is closed or blocked."
